@@ -1,0 +1,52 @@
+:root {
+  /* === NEW PROFESSIONAL COLOR PALETTE === */
+  /* Deep Navy + Slate background - academic, authoritative */
+  --color-bg: #0A0F1E;
+  --color-bg-light: #111827;
+  --color-bg-card: #131D35;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+
+  /* Royal Blue + Gold accent - prestigious, research-oriented */
+  --color-primary: #4F8EF7;       /* Royal Blue */
+  --color-secondary: #1B4FD8;     /* Deep Indigo */
+  --color-accent: #F5C842;        /* Academic Gold */
+  --color-accent-light: rgba(245, 200, 66, 0.15);
+
+  --color-text: #A8B2D8;
+  --color-text-light: #CDD5F0;
+  --color-heading: #E8EDF8;
+
+  /* Typography */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #4F8EF7, #1B4FD8);
+  --gradient-text: linear-gradient(90deg, #4F8EF7, #F5C842);
+  --gradient-gold: linear-gradient(90deg, #F5C842, #E8A800);
+
+  /* Glassmorphism */
+  --glass-border: 1px solid rgba(79, 142, 247, 0.12);
+  --glass-border-hover: 1px solid rgba(79, 142, 247, 0.35);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  --glass-blur: blur(12px);
+
+  /* Layout & Spacing */
+  --border-radius: 16px;
+  --border-radius-sm: 10px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
