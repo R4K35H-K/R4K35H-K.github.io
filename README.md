@@ -3,6 +3,7 @@
 [![GitHub Pages](https://img.shields.io/badge/Live-Site-blue)](https://R4K35H-K.github.io)
 [![Google Scholar](https://img.shields.io/badge/Google-Scholar-informational)](https://scholar.google.com/citations?user=vvfARToAAAAJ)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0003--3698--0445-green)](https://orcid.org/0000-0003-3698-0445)
+[![CV](https://img.shields.io/badge/Download-CV-brightgreen)](CV_Rakesh%20Kumar.pdf)
 
 ## About
 I am a researcher specializing in **Multimedia Security**, **Steganalysis**, and **Robust JPEG Steganography**. My work focuses on bridging the gap between theoretical information concealment and the realities of modern social networking platforms. 
