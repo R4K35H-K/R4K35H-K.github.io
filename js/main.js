@@ -1,9 +1,12 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Navbar scroll effect
+  // Navbar scroll effect + Back to Top button
   const navbar = document.getElementById('navbar');
+  const backToTop = document.getElementById('back-to-top');
+
   window.addEventListener('scroll', () => {
+    // Navbar shrink
     if (window.scrollY > 50) {
       navbar.style.padding = '0.6rem 0';
       navbar.style.background = 'rgba(10, 15, 30, 0.95)';
@@ -11,7 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.style.padding = '1.1rem 0';
       navbar.style.background = 'rgba(10, 15, 30, 0.75)';
     }
+
+    // Back to Top visibility
+    if (backToTop) {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
   }, { passive: true });
+
+  // Back to Top click handler
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // Intersection Observer for scroll-reveal
   const revealObserver = new IntersectionObserver((entries, observer) => {

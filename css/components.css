@@ -573,3 +573,56 @@
 .social-link[aria-label="Web of Science"]:hover{ background: #5E33BF; border-color: #5E33BF; }
 .social-link[aria-label="Vidwan"]:hover        { background: #0066CC; border-color: #0066CC; }
 .social-link[aria-label="Email"]:hover         { background: var(--gradient-primary); border-color: var(--color-primary); }
+
+/* =============================================
+   PUBLICATION IMPACT SUMMARIES
+   ============================================= */
+.pub-impact {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin-top: 0.6rem;
+  padding: 0.65rem 1rem;
+  background: rgba(79, 142, 247, 0.05);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 6px 6px 0;
+}
+
+.pub-impact i {
+  color: var(--color-accent);
+  margin-right: 0.35rem;
+}
+
+/* =============================================
+   BACK TO TOP BUTTON
+   ============================================= */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(79, 142, 247, 0.35);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  box-shadow: 0 6px 24px rgba(79, 142, 247, 0.55);
+  transform: translateY(-3px);
+}
