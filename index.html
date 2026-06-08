@@ -175,9 +175,44 @@
                             <i class="fa-brands fa-github"></i> View on GitHub
                         </a>
                     </div>
-                    <div class="featured-visual" style="min-height: 220px; background: linear-gradient(135deg, #131D35 0%, #0A0F1E 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem;">
-                        <i class="fa-solid fa-shield-halved" style="font-size: 4rem; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                        <p style="font-size: 0.82rem; color: var(--color-text); letter-spacing: 1px; text-transform: uppercase;">Image Steganography Suite</p>
+                    <div class="featured-visual">
+                        <div class="window-mockup">
+                            <div class="window-header">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div class="window-dots">
+                                        <span class="window-dot close"></span>
+                                        <span class="window-dot minimize"></span>
+                                        <span class="window-dot maximize"></span>
+                                    </div>
+                                    <div class="window-title">MasterStegoSuite.exe</div>
+                                </div>
+                                <div class="window-tabs">
+                                    <button class="window-tab active" onclick="switchStegoDemo('text')">Text Demo</button>
+                                    <button class="window-tab" onclick="switchStegoDemo('audio')">Audio Demo</button>
+                                </div>
+                            </div>
+                            <div class="window-content" id="stego-window-content">
+                                <!-- Text Stego Demo -->
+                                <!-- Option A: Video (Uncomment if hosting on a web server or GitHub Pages) -->
+                                <!--
+                                <video id="stego-video-text" autoplay loop muted playsinline class="featured-media" onplay="this.parentElement.classList.add('has-media'); this.classList.add('loaded')">
+                                    <source src="assets/stego-suite-demo.mp4" type="video/mp4">
+                                </video>
+                                -->
+                                <!-- Option B: GIF (Default - works locally via file:/// protocol) -->
+                                <img id="stego-img-text" src="assets/stego-suite-demo.gif" alt="Text Stego Demo" class="featured-media" onload="this.parentElement.classList.add('has-media'); this.classList.add('loaded')">
+
+                                <!-- Audio Stego Demo -->
+                                <!-- Option A: Video (Uncomment if hosting on a web server or GitHub Pages) -->
+                                <!--
+                                <video id="stego-video-audio" autoplay loop muted playsinline class="featured-media" style="display: none;" onplay="this.parentElement.classList.add('has-media'); this.classList.add('loaded')">
+                                    <source src="assets/stego-audio-demo.mp4" type="video/mp4">
+                                </video>
+                                -->
+                                <!-- Option B: GIF (Default - works locally via file:/// protocol) -->
+                                <img id="stego-img-audio" src="assets/stego-audio-demo.gif" alt="Audio Stego Demo" class="featured-media" style="display: none;" onload="this.parentElement.classList.add('has-media'); this.classList.add('loaded')">
+                            </div>
+                        </div>
                     </div>
                 </div>
 

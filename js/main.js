@@ -77,4 +77,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const heroSection = document.getElementById('hero');
   if (heroSection) heroObserver.observe(heroSection);
+
+  // Autoplay handler and loaded state check for steganography videos
+  const stegoVideos = document.querySelectorAll('.featured-visual video');
+  stegoVideos.forEach(video => {
+    // When first frame is loaded, fade it in
+    video.addEventListener('loadeddata', () => {
+      video.parentElement.classList.add('has-media');
+      video.classList.add('loaded');
+    });
+    // Force loaded state if already ready
+    if (video.readyState >= 2) {
+      video.parentElement.classList.add('has-media');
+      video.classList.add('loaded');
+    }
+    // Attempt play programmatically and fall back to static first frame on autoplay block
+    video.play().catch(function() {
+      video.parentElement.classList.add('has-media');
+      video.classList.add('loaded');
+    });
+  });
 });
+
+// Global function to switch between steganography demo tabs in the featured project window
+function switchStegoDemo(type) {
+  const textVideo = document.getElementById('stego-video-text');
+  const audioVideo = document.getElementById('stego-video-audio');
+  
+  const textImg = document.getElementById('stego-img-text');
+  const audioImg = document.getElementById('stego-img-audio');
+  
+  const tabs = document.querySelectorAll('.window-tab');
+  if (tabs.length < 2) return;
+  
+  tabs.forEach(tab => tab.classList.remove('active'));
+  
+  if (type === 'text') {
+    tabs[0].classList.add('active');
+    
+    if (textVideo) {
+      textVideo.style.display = 'block';
+      textVideo.play().catch(function() {});
+    }
+    if (textImg) textImg.style.display = 'block';
+    
+    if (audioVideo) {
+      audioVideo.style.display = 'none';
+      audioVideo.pause();
+    }
+    if (audioImg) audioImg.style.display = 'none';
+    
+  } else if (type === 'audio') {
+    tabs[1].classList.add('active');
+    
+    if (audioVideo) {
+      audioVideo.style.display = 'block';
+      audioVideo.play().catch(function() {});
+    }
+    if (audioImg) audioImg.style.display = 'block';
+    
+    if (textVideo) {
+      textVideo.style.display = 'none';
+      textVideo.pause();
+    }
+    if (textImg) textImg.style.display = 'none';
+  }
+}
